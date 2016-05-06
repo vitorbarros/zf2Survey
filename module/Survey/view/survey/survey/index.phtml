@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <ul>
+            <li><a href="<?php echo $this->url('internal_route', array('controller' => 'survey', 'action' => 'create')); ?>">Nova enquete</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                    <th>Url</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->survey as $survey) : ?>
+                <tr>
+                    <td><?php echo $survey->getSurveyId(); ?></td>
+                    <td><?php echo $survey->getSurveyName(); ?></td>
+                    <td><?php echo $survey->getSurveyStatus(); ?></td>
+                    <td>Url</td>
+                    <td>Ação</td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,8 @@
+public/node_modules
+.idea/
+.phpintel/
+.project
+.buildpath
+vendor/
+survey_sys_db.mwb
+survey_sys_db.sql

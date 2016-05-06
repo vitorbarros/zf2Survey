@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <ul>
+            <li><a href="<?php echo $this->url('internal_route', array('controller' => 'survey', 'action' => 'create')); ?>">Nova enquete</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <div class="form">
+            <?php $form = $this->form; ?>
+            <?php $form->setAttribute('onSubmit', 'event.preventDefault();storeSurvey()'); ?>
+            <?php $form->setAttribute('id', 'createSurvey'); ?>
+            <?php $form->prepare(); ?>
+            <?php echo $this->form()->openTag($form); ?>
+            <?php echo $this->formhidden($form->get('csrf')); ?>
+            <?php echo $this->formrow($form->get('survey_name')); ?>
+            <?php echo $this->formrow($form->get('survey_status')); ?>
+            <!--alert-->
+            <div class="row alert-row">
+                <div class="col-md-12 my-col" id="alert-survey"></div>
+            </div>
+            <!--alert-->
+            <?php echo $this->formrow($form->get('submit')); ?>
+            <?php echo $this->form()->closeTag(); ?>
+        </div>
+    </div>
+</div>
